@@ -1,0 +1,66 @@
+# WeatherObserved
+
+## Exemple
+
+```json
+{
+    "id": "http://greenmov.fr/weather/observed",
+    "type": "WeatherObserved",
+    "dateObserved": {
+        "type": "Property",
+        "value": {
+            "@type": "DateTime",
+            "@value": "2022-07-25T17:00:00.000Z"
+        }
+    },
+    "temperature": {
+        "type": "Property",
+        "value": 20
+    },
+    "atmosphericPressure": {
+        "type": "Property",
+        "value": 1025
+    },
+    "relativeHumidity": {
+        "type": "Property",
+        "value": 10
+    },
+    "windDirection": {
+        "type": "Property",
+        "value": 270
+    },
+    "windSpeed": {
+        "type": "Property",
+        "value": 11
+    },
+    "condition": {
+        "type": "Property",
+        "value": 500
+    },
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}
+```
+
+## Légende
+
+| Champ | Description |
+| --- | --- |
+| id | Id pas très utile puisque l’on se réfère à la même géolocalisation (1 seule démentions : le temps géré par timescale) |
+| type | type de l’entité (toujours “WeatherObserved”) |
+| dateObserved | Date à laquelle les données ont été observé. |
+| temperature | Température moyenne |
+| atmosphericPressure | Pression atmosphérique |
+| relativeHumidity | Humidité moyenne |
+| windDirection | Direction du vent |
+| windSpeed | Vitesse du vent |
+| condition | Condition météo (code, cf ci-dessous) |
+
+### Condition météo
+
+La condition météo réfère au type de météo qui (a été)/sera rencontré à la date. Par exemple la condition peut-être pluvieuse orageuse etc. pour plus d’information merci de vous référer à la documentation de l’API OpenWeatherMap à l’adresse :
+
+[Weather Conditions](https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2)
+
+[https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2](https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2)
